@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Siva Kumar Kalava | DevOps Engineer</title>
+<meta name="description" content="DevOps engineer: AWS, Kubernetes, Terraform, Jenkins, GitOps. Zero planned downtime releases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F7;--card:#FFFFFF;--ink:#10202B;--mute:#546574;--line:#D3DDE4;--ok:#0B7A64;--okbg:#DDF1EB;--hd:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--bd:'Public Sans','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D161C;--card:#15222B;--ink:#E8EFF3;--mute:#93A5B2;--line:#26363F;--ok:#4FD1B1;--okbg:#12342D}}
+:root[data-theme="dark"]{--bg:#0D161C;--card:#15222B;--ink:#E8EFF3;--mute:#93A5B2;--line:#26363F;--ok:#4FD1B1;--okbg:#12342D}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--bd);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ok);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font:700 18px var(--hd);text-decoration:none}
+nav a{margin-left:20px;font-size:15px;color:var(--mute);text-decoration:none}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--hd);line-height:1.1;margin:0}
+.hero{padding:56px 0 36px}
+.hero h1{font-size:clamp(38px,7vw,72px);font-weight:800;letter-spacing:-.02em;max-width:15em}
+.hero p.lead{font-size:clamp(18px,2.4vw,21px);color:var(--mute);max-width:36em;margin:22px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px;font-weight:700}
+.sub{color:var(--mute);margin:0 0 26px;max-width:40em}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-bottom:0}
+.stage{position:relative;background:var(--card);border:1px solid var(--line);border-right-width:0;padding:16px 12px 14px;text-align:left;font:600 15px var(--hd);color:var(--ink);cursor:pointer}
+.stage:first-child{border-radius:10px 0 0 10px}
+.stage:last-child{border-radius:0 10px 10px 0;border-right-width:1px}
+.stage small{display:block;font:500 12.5px var(--bd);color:var(--mute);margin-top:2px}
+.stage i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--line);margin-right:8px;transition:background .3s}
+.stage.ran i{background:var(--ok)}
+.stage[aria-pressed="true"]{background:var(--okbg);border-color:var(--ok);z-index:1;box-shadow:0 0 0 1px var(--ok)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:14px;padding:24px;min-height:190px}
+.panel h3{font-size:22px;margin-bottom:6px}
+.panel .tools{color:var(--ok);font-weight:600;font-size:15px;margin:0 0 12px}
+.panel p{margin:0;max-width:42em}
+.status{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--ok)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:18px 0;border-top:3px solid var(--ok)}
+.stat b{display:block;font:800 clamp(34px,5vw,48px) var(--hd);letter-spacing:-.02em}
+.stat span{color:var(--mute);font-size:15px;line-height:1.4;display:block;margin-top:4px}
+/* experience */
+.job{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+.job header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-bottom:14px}
+.job h3{font-size:22px}
+.job .when{color:var(--mute);font-size:15px}
+.job ul{margin:0;padding-left:20px}
+.job li{margin-bottom:10px;max-width:46em}
+.job li b{font-weight:600}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px}
+.skills div{padding:14px 0;border-bottom:1px solid var(--line)}
+.skills dt{font:700 16px var(--hd);margin-bottom:2px}
+.skills dd{margin:0;color:var(--mute);font-size:15.5px}
+.contact p{font-size:20px;max-width:30em;margin:0 0 22px}
+footer{padding:26px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){
+ .pipe{grid-template-columns:repeat(2,1fr);gap:8px}
+ .stage,.stage:first-child,.stage:last-child{border-radius:10px;border-right-width:1px}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .skills{grid-template-columns:1fr}
+ nav a:not(.keep){display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}.stage i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header class="top">
+  <a class="brand" href="#top">Siva Kumar Kalava</a>
+  <nav aria-label="Sections"><a href="#how">How I ship</a><a href="#impact">Impact</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a class="keep" href="#contact">Contact</a></nav>
+ </header>
+
+ <main id="top">
+  <div class="hero">
+   <h1>I ship code to production without the downtime.</h1>
+   <p class="lead">DevOps engineer with 3 years on AWS, Kubernetes and GitOps at LTIMindtree. I build the pipelines, infrastructure and monitoring that let teams release often and sleep through the night. Based in Hyderabad, India.</p>
+   <div class="cta">
+    <a class="btn p" href="mailto:kalavasivakumar@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/sivakumarkalava/" target="_blank" rel="noopener">LinkedIn profile</a>
+   </div>
+  </div>
+ </main>
+</div>
+
+<section id="how"><div class="wrap">
+ <h2>How I ship, stage by stage</h2>
+ <p class="sub">This is the delivery pipeline I run day to day. Select a stage to see what I own there.</p>
+ <div class="pipe" id="pipe" role="group" aria-label="Delivery pipeline stages"></div>
+ <div class="panel" id="panel" aria-live="polite"></div>
+</div></section>
+
+<section id="impact"><div class="wrap">
+ <h2>Results from production</h2>
+ <p class="sub">Measured outcomes from my current role.</p>
+ <div class="stats">
+  <div class="stat"><b>30%</b><span>faster deployments with Jenkins CI/CD pipelines</span></div>
+  <div class="stat"><b>40%</b><span>faster issue detection and troubleshooting</span></div>
+  <div class="stat"><b>3 to 5</b><span>production environments on Amazon EKS</span></div>
+  <div class="stat"><b>Zero</b><span>planned downtime across production releases</span></div>
+ </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+ <h2>Experience</h2>
+ <p class="sub">What I have done, in the order a release actually happens.</p>
+ <article class="job">
+  <header><div><h3>DevOps Engineer, LTIMindtree</h3><div class="when">Hyderabad, India</div></div><div class="when">Dec 2023 to present</div></header>
+  <ul>
+   <li><b>CI/CD.</b> Built and maintain Jenkins pipelines with Git and Maven across multiple services, cutting deployment time by 30%.</li>
+   <li><b>Infrastructure as code.</b> Provision AWS (EC2, S3, VPC, IAM, ELB, ASG, RDS) with reusable Terraform modules, so every environment is consistent and repeatable.</li>
+   <li><b>Kubernetes platform.</b> Operate Amazon EKS clusters for 3 to 5 production environments: node group scaling, workload deployments and version upgrades.</li>
+   <li><b>GitOps releases.</b> Maintain Helm charts and ArgoCD deployments, so every release is version-controlled and auditable. Blue-green and canary strategies deliver zero planned downtime.</li>
+   <li><b>Observability.</b> Built Prometheus, Grafana and CloudWatch dashboards and alerts that cut detection and troubleshooting time by 40%.</li>
+   <li><b>Reliability.</b> On-call incident response and root cause analysis, reducing repeat critical incidents.</li>
+   <li><b>DevSecOps.</b> Added SonarQube quality gates and Trivy scans to pipelines, so security and quality issues are caught before production.</li>
+   <li><b>Standards.</b> Standardized Docker environments from development to production and set Git branching strategies, reducing deployment failures and merge conflicts.</li>
+  </ul>
+ </article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Toolbox</h2>
+ <p class="sub">The tools I use hands-on.</p>
+ <dl class="skills">
+  <div><dt>Cloud</dt><dd>AWS: EC2, S3, VPC, IAM, ELB, ASG, RDS, CloudWatch, Route53</dd></div>
+  <div><dt>CI/CD and GitOps</dt><dd>Jenkins, ArgoCD, Git, blue-green, rolling and canary deployments</dd></div>
+  <div><dt>Infrastructure as code</dt><dd>Terraform: modules, remote state, workspaces</dd></div>
+  <div><dt>Containers</dt><dd>Docker, Kubernetes on Amazon EKS, Helm</dd></div>
+  <div><dt>Kubernetes</dt><dd>Deployments, Services, ConfigMaps, Ingress, HPA, node groups</dd></div>
+  <div><dt>Monitoring</dt><dd>Prometheus, Grafana, CloudWatch, log analysis, alerting</dd></div>
+  <div><dt>DevSecOps</dt><dd>SonarQube, Trivy, secrets management, credential hygiene</dd></div>
+  <div><dt>Reliability</dt><dd>Incident response, root cause analysis, high availability</dd></div>
+  <div><dt>Networking</dt><dd>TCP/IP, DNS, load balancing, VPC, subnets, NAT, IGW, route tables</dd></div>
+  <div><dt>Systems</dt><dd>Linux, Bash, Agile/Scrum</dd></div>
+ </dl>
+ <p class="sub" style="margin-top:26px"><b>Education.</b> B.Tech in Electronics and Communication Engineering, Sree Vidyanikethan Engineering College, Tirupati (2019 to 2023).</p>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+ <h2>Let's talk</h2>
+ <p>I am open to DevOps and cloud engineering roles. The fastest way to reach me is email.</p>
+ <div class="cta">
+  <a class="btn p" href="mailto:kalavasivakumar@gmail.com">kalavasivakumar@gmail.com</a>
+  <a class="btn" href="https://www.linkedin.com/in/sivakumarkalava/" target="_blank" rel="noopener">LinkedIn profile</a>
+ </div>
+</div></section>
+
+<footer><div class="wrap">Siva Kumar Kalava, DevOps Engineer. Hyderabad, India.</div></footer>
+
+<script>
+var S=[
+{n:"Commit",s:"Git",t:"Git, branching strategies",d:"I set the branching strategies teams work to, which means fewer merge conflicts and cleaner releases from the very first commit.",r:"Fewer merge conflicts"},
+{n:"Build",s:"Jenkins",t:"Jenkins, Maven, Docker",d:"End-to-end pipelines across multiple services, with Docker-based environments that behave the same in development, staging and production.",r:"Deployment time down 30%"},
+{n:"Scan",s:"Quality gate",t:"SonarQube, Trivy",d:"Quality gates and vulnerability scans run inside the pipeline, so security and code-quality problems are found before they reach production.",r:"Issues caught before release"},
+{n:"Provision",s:"Terraform",t:"Terraform, AWS",d:"Reusable Terraform modules create EC2, S3, VPC, IAM, ELB, ASG and RDS the same way every time, in every environment.",r:"Consistent, repeatable infrastructure"},
+{n:"Deploy",s:"EKS + ArgoCD",t:"Amazon EKS, Helm, ArgoCD",d:"Helm charts and GitOps releases on EKS clusters for 3 to 5 production environments. Blue-green and canary rollouts keep users unaffected.",r:"Zero planned downtime"},
+{n:"Observe",s:"Prometheus",t:"Prometheus, Grafana, CloudWatch",d:"Dashboards and alerts show problems early. When something breaks, I handle on-call response and write the root cause analysis so it does not repeat.",r:"Detection and troubleshooting time down 40%"}];
+var pipe=document.getElementById("pipe"),panel=document.getElementById("panel"),btns=[];
+function show(i){btns.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false")});var x=S[i];
+panel.innerHTML="<h3></h3><p class='tools'></p><p class='d'></p><span class='status'></span>";
+panel.querySelector("h3").textContent=x.n;panel.querySelector(".tools").textContent=x.t;panel.querySelector(".d").textContent=x.d;panel.querySelector(".status").textContent="Passed: "+x.r}
+S.forEach(function(x,i){var b=document.createElement("button");b.type="button";b.className="stage";b.setAttribute("aria-pressed","false");
+b.innerHTML="<i></i>"+x.n+"<small>"+x.s+"</small>";b.onclick=function(){show(i)};pipe.appendChild(b);btns.push(b)});
+show(4);
+var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+btns.forEach(function(b,i){if(rm){b.classList.add("ran")}else{setTimeout(function(){b.classList.add("ran")},500+i*350)}});
+</script>
+</body>
+</html>
