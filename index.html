@@ -4,20 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Siva Kumar Kalava | DevOps Engineer</title>
+<script>if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)){document.documentElement.className+=' js'}</script>
 <meta name="description" content="DevOps engineer: AWS, Kubernetes, Terraform, Jenkins, GitOps. Zero planned downtime releases.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F2F5F7;--card:#FFFFFF;--ink:#10202B;--mute:#546574;--line:#D3DDE4;--ok:#0B7A64;--okbg:#DDF1EB;--hd:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--bd:'Public Sans','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D161C;--card:#15222B;--ink:#E8EFF3;--mute:#93A5B2;--line:#26363F;--ok:#4FD1B1;--okbg:#12342D}}
-:root[data-theme="dark"]{--bg:#0D161C;--card:#15222B;--ink:#E8EFF3;--mute:#93A5B2;--line:#26363F;--ok:#4FD1B1;--okbg:#12342D}
+:root{--bg:#07040F;--card:#120A24;--ink:#F0E9FF;--mute:#A596C6;--line:#2A1D48;--ok:#C4A1FF;--okbg:#231245;color-scheme:dark;--hd:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--bd:'Public Sans','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--bd);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--ok);outline-offset:3px;border-radius:4px}
-.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
 .brand{font:700 18px var(--hd);text-decoration:none}
 nav a{margin-left:20px;font-size:15px;color:var(--mute);text-decoration:none}
@@ -33,16 +32,25 @@ h1,h2,h3{font-family:var(--hd);line-height:1.1;margin:0}
 section{padding:44px 0;border-top:1px solid var(--line)}
 section>.wrap>h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px;font-weight:700}
 .sub{color:var(--mute);margin:0 0 26px;max-width:40em}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg canvas{position:absolute;inset:0}
+.bg .pl{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 10%,rgba(0,0,0,.18) 27%,rgba(0,0,0,.18) 73%,#000 90%,#000 100%);mask-image:linear-gradient(90deg,#000 0,#000 10%,rgba(0,0,0,.18) 27%,rgba(0,0,0,.18) 73%,#000 90%,#000 100%)}
+.bg .pl>div{position:absolute;left:0;top:0;will-change:transform;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ok);opacity:.42;filter:blur(1.8px);font:700 15px var(--hd)}
+@media (max-width:900px){.bg .pl{-webkit-mask-image:none;mask-image:none;opacity:.3}}
+.hero h1,.hero .lead,section h2,.sub,.contact p,.job li,.skills dd,.skills dt{text-shadow:0 0 16px var(--bg),0 0 6px var(--bg)}
+.bg svg{width:var(--s,84px);height:var(--s,84px);fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
 /* pipeline */
-.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-bottom:0}
-.stage{position:relative;background:var(--card);border:1px solid var(--line);border-right-width:0;padding:16px 12px 14px;text-align:left;font:600 15px var(--hd);color:var(--ink);cursor:pointer}
+.pipe{display:grid;grid-template-columns:repeat(8,1fr);gap:0;margin-bottom:0}
+.stage{position:relative;background:color-mix(in srgb,var(--card) 93%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-right-width:0;padding:14px 9px 12px;text-align:left;font:600 14px var(--hd);color:var(--ink);cursor:pointer}
 .stage:first-child{border-radius:10px 0 0 10px}
 .stage:last-child{border-radius:0 10px 10px 0;border-right-width:1px}
 .stage small{display:block;font:500 12.5px var(--bd);color:var(--mute);margin-top:2px}
 .stage i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--line);margin-right:8px;transition:background .3s}
 .stage.ran i{background:var(--ok)}
 .stage[aria-pressed="true"]{background:var(--okbg);border-color:var(--ok);z-index:1;box-shadow:0 0 0 1px var(--ok)}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:14px;padding:24px;min-height:190px}
+.panel{background:color-mix(in srgb,var(--card) 93%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:10px;margin-top:14px;padding:24px;min-height:190px}
 .panel h3{font-size:22px;margin-bottom:6px}
 .panel .tools{color:var(--ok);font-weight:600;font-size:15px;margin:0 0 12px}
 .panel p{margin:0;max-width:42em}
@@ -53,7 +61,7 @@ section>.wrap>h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px;font-weight:70
 .stat b{display:block;font:800 clamp(34px,5vw,48px) var(--hd);letter-spacing:-.02em}
 .stat span{color:var(--mute);font-size:15px;line-height:1.4;display:block;margin-top:4px}
 /* experience */
-.job{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+.job{background:color-mix(in srgb,var(--card) 93%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:10px;padding:24px}
 .job header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-bottom:14px}
 .job h3{font-size:22px}
 .job .when{color:var(--mute);font-size:15px}
@@ -67,6 +75,7 @@ section>.wrap>h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px;font-weight:70
 .skills dd{margin:0;color:var(--mute);font-size:15.5px}
 .contact p{font-size:20px;max-width:30em;margin:0 0 22px}
 footer{padding:26px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:1000px) and (min-width:761px){.pipe{grid-template-columns:repeat(4,1fr);gap:8px}.stage,.stage:first-child,.stage:last-child{border-radius:10px;border-right-width:1px}}
 @media (max-width:760px){
  .pipe{grid-template-columns:repeat(2,1fr);gap:8px}
  .stage,.stage:first-child,.stage:last-child{border-radius:10px;border-right-width:1px}
@@ -78,6 +87,23 @@ footer{padding:26px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="git" viewBox="0 0 48 48"><circle cx="14" cy="11" r="5"/><circle cx="14" cy="37" r="5"/><circle cx="34" cy="21" r="5"/><path d="M14 16v16M34 26c0 8-20 2-20 6"/></symbol>
+<symbol id="gear" viewBox="0 0 48 48"><circle cx="24" cy="24" r="9"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M38 10l-6 6M16 32l-6 6"/></symbol>
+<symbol id="box" viewBox="0 0 48 48"><rect x="6" y="22" width="8" height="8"/><rect x="16" y="22" width="8" height="8"/><rect x="26" y="22" width="8" height="8"/><rect x="16" y="12" width="8" height="8"/><rect x="26" y="12" width="8" height="8"/><path d="M4 33c2 9 12 11 22 9 8-2 13-8 15-16-3 0-5 1-6 2"/></symbol>
+<symbol id="k8s" viewBox="0 0 48 48"><polygon points="24,4 41,13 41,35 24,44 7,35 7,13"/><circle cx="24" cy="24" r="5"/><path d="M24 19V9M24 29v10M19.5 21.5L11 16M28.5 26.5L37 32M19.5 26.5L11 32M28.5 21.5L37 16"/></symbol>
+<symbol id="shield" viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 11-7 18-16 22C15 40 8 33 8 22V10z"/><path d="M17 24l5 5 9-10"/></symbol>
+<symbol id="chart" viewBox="0 0 48 48"><path d="M6 42V6M6 42h36M12 32l9-10 7 6 12-16"/></symbol>
+<symbol id="cloud" viewBox="0 0 48 48"><path d="M14 36a8 8 0 010-16 10 10 0 0119-3 9 9 0 011 19z"/></symbol>
+<symbol id="blocks" viewBox="0 0 48 48"><rect x="6" y="6" width="16" height="16"/><rect x="26" y="6" width="16" height="16"/><rect x="26" y="26" width="16" height="16"/></symbol>
+<symbol id="lens" viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="M30 30l12 12"/></symbol>
+<symbol id="sync" viewBox="0 0 48 48"><path d="M38 20a14 14 0 00-26-4M40 8v12H28M10 28a14 14 0 0026 4M8 40V28h12"/></symbol>
+<symbol id="flame" viewBox="0 0 48 48"><path d="M24 4c2 8 12 12 12 24a12 12 0 01-24 0c0-6 4-8 5-14 3 2 5 4 5 8 2-4 2-10 2-18z"/></symbol>
+<symbol id="helm" viewBox="0 0 48 48"><circle cx="24" cy="24" r="11"/><circle cx="24" cy="24" r="3"/><path d="M24 6v8M24 34v8M6 24h8M34 24h8M11 11l6 6M31 31l6 6M37 11l-6 6M17 31l-6 6"/></symbol>
+<symbol id="sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></symbol>
+<symbol id="term" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="32" rx="4"/><path d="M12 20l7 5-7 5M23 32h12"/></symbol>
+</defs></svg>
+<div class="bg" id="bg" aria-hidden="true"></div>
 <div class="wrap">
  <header class="top">
   <a class="brand" href="#top">Siva Kumar Kalava</a>
@@ -163,21 +189,50 @@ footer{padding:26px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid
 
 <script>
 var S=[
-{n:"Commit",s:"Git",t:"Git, branching strategies",d:"I set the branching strategies teams work to, which means fewer merge conflicts and cleaner releases from the very first commit.",r:"Fewer merge conflicts"},
-{n:"Build",s:"Jenkins",t:"Jenkins, Maven, Docker",d:"End-to-end pipelines across multiple services, with Docker-based environments that behave the same in development, staging and production.",r:"Deployment time down 30%"},
-{n:"Scan",s:"Quality gate",t:"SonarQube, Trivy",d:"Quality gates and vulnerability scans run inside the pipeline, so security and code-quality problems are found before they reach production.",r:"Issues caught before release"},
-{n:"Provision",s:"Terraform",t:"Terraform, AWS",d:"Reusable Terraform modules create EC2, S3, VPC, IAM, ELB, ASG and RDS the same way every time, in every environment.",r:"Consistent, repeatable infrastructure"},
-{n:"Deploy",s:"EKS + ArgoCD",t:"Amazon EKS, Helm, ArgoCD",d:"Helm charts and GitOps releases on EKS clusters for 3 to 5 production environments. Blue-green and canary rollouts keep users unaffected.",r:"Zero planned downtime"},
-{n:"Observe",s:"Prometheus",t:"Prometheus, Grafana, CloudWatch",d:"Dashboards and alerts show problems early. When something breaks, I handle on-call response and write the root cause analysis so it does not repeat.",r:"Detection and troubleshooting time down 40%"}];
+{n:"Code",s:"Git",t:"Git, branching strategies",d:"I set the Git branching strategies teams work to, so changes merge cleanly and every release starts from a clean history.",r:"Fewer merge conflicts"},
+{n:"Build",s:"Jenkins",t:"Jenkins, Maven, Git",d:"Jenkins pipelines pick up every commit and build multiple services with Maven, with no manual steps in between.",r:"Deployment time down 30%"},
+{n:"Test",s:"Maven",t:"Jenkins, Maven",d:"Automated tests run inside the pipeline, so only builds that pass move on to quality checks and packaging.",r:"Only passing builds move forward"},
+{n:"CQA",s:"SonarQube",t:"SonarQube quality gates",d:"Code quality analysis gates in Jenkins stop code-quality and security issues before anything gets packaged.",r:"Issues caught before production"},
+{n:"Docker build",s:"Docker",t:"Docker",d:"Standardized Docker-based environments for development, staging and production, so an image behaves the same everywhere it runs.",r:"Fewer deployment failures"},
+{n:"Image scan",s:"Trivy",t:"Trivy vulnerability scanning",d:"Trivy scans each image inside the pipeline, so vulnerable images are found and fixed before they can be deployed.",r:"Vulnerabilities found before release"},
+{n:"Deploy",s:"ArgoCD",t:"Terraform, Amazon EKS, Helm, ArgoCD",d:"Terraform provisions the AWS infrastructure. Helm charts and ArgoCD GitOps releases run on EKS for 3 to 5 production environments, using blue-green and canary rollouts.",r:"Zero planned downtime"},
+{n:"Monitor",s:"Grafana",t:"Prometheus, Grafana, CloudWatch",d:"Dashboards and alerts show problems early. When something breaks I handle on-call response and write the root cause analysis so it does not repeat.",r:"Detection and troubleshooting time down 40%"}];
 var pipe=document.getElementById("pipe"),panel=document.getElementById("panel"),btns=[];
 function show(i){btns.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false")});var x=S[i];
 panel.innerHTML="<h3></h3><p class='tools'></p><p class='d'></p><span class='status'></span>";
 panel.querySelector("h3").textContent=x.n;panel.querySelector(".tools").textContent=x.t;panel.querySelector(".d").textContent=x.d;panel.querySelector(".status").textContent="Passed: "+x.r}
 S.forEach(function(x,i){var b=document.createElement("button");b.type="button";b.className="stage";b.setAttribute("aria-pressed","false");
 b.innerHTML="<i></i>"+x.n+"<small>"+x.s+"</small>";b.onclick=function(){show(i)};pipe.appendChild(b);btns.push(b)});
-show(4);
+show(6);
 var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
 btns.forEach(function(b,i){if(rm){b.classList.add("ran")}else{setTimeout(function(){b.classList.add("ran")},500+i*350)}});
+var CFG={"neb": 1};
+var T=[["Git","git"],["Jenkins","gear"],["Docker","box"],["Kubernetes","k8s"],["Terraform","blocks"],["SonarQube","lens"],["Trivy","shield"],["AWS","cloud"],["ArgoCD","sync"],["Prometheus","flame"],["Grafana","sun"],["Helm","helm"],["Linux","term"],["CloudWatch","cloud"]];
+var bg=document.getElementById("bg"),cv=document.createElement("canvas"),g=cv.getContext("2d"),W=0,Hh=0,DPR=Math.min(window.devicePixelRatio||1,2);
+bg.appendChild(cv);var pl=document.createElement("div");pl.className="pl";bg.appendChild(pl);
+var stars=[];for(var i=0;i<190;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.2+.25,d:Math.random()*.3+.04,p:Math.random()*6.28,s:Math.random()*1.6+.4});
+var CS=[[.2,.3],[.8,.35],[.5,.78]],P=[];
+T.forEach(function(t,i){var d=document.createElement("div");d.style.setProperty("--s",(58+(i%4)*12)+"px");d.innerHTML='<svg><use href="#'+t[1]+'"/></svg><span></span>';d.lastChild.textContent=t[0];pl.appendChild(d);P.push({d:d,i:i,ph:i*2.1,dir:CFG.single?1:(i%2?1:-1)})});
+function size(){W=innerWidth;Hh=innerHeight;cv.width=W*DPR;cv.height=Hh*DPR;cv.style.width=W+"px";cv.style.height=Hh+"px";g.setTransform(DPR,0,0,DPR,0,0)}
+function orb(p){if(CFG.single){var k=p.i;return{cx:W*.5,cy:Hh*.46,rx:W*(.1+k*.034),ry:Hh*(.07+k*.03),sp:.16/(1+k*.35)}}
+var c=CS[p.i%3];return{cx:W*c[0],cy:Hh*c[1],rx:Math.min(W,900)*(.1+(p.i%5)*.045),ry:Hh*(.08+(p.i%4)*.04),sp:.045+(p.i%4)*.018}}
+function frame(now){var t=(now||0)/1000,sy=window.scrollY||0;g.clearRect(0,0,W,Hh);
+if(CFG.neb){[[.2,.25,"#7C3AED"],[.85,.7,"#DB2777"]].forEach(function(q){var y=Hh*q[1]-sy*.03,r=g.createRadialGradient(W*q[0],y,0,W*q[0],y,Math.max(W,Hh)*.55);r.addColorStop(0,q[2]+"33");r.addColorStop(1,q[2]+"00");g.fillStyle=r;g.fillRect(0,0,W,Hh)})}
+if(CFG.single){var sx=W*.5,sy2=Hh*.46,r=g.createRadialGradient(sx,sy2,0,sx,sy2,120);r.addColorStop(0,CFG.sun+"AA");r.addColorStop(1,CFG.sun+"00");g.fillStyle=r;g.fillRect(sx-120,sy2-120,240,240);
+g.strokeStyle="rgba(255,255,255,.07)";g.lineWidth=1;P.forEach(function(p){var o=orb(p);g.beginPath();g.ellipse(o.cx,o.cy,o.rx,o.ry,0,0,6.2832);g.stroke()})}
+stars.forEach(function(s){var y=((s.y*Hh-sy*s.d)%Hh+Hh)%Hh;g.globalAlpha=.3+.7*(.5+.5*Math.sin(t*s.s+s.p));g.beginPath();g.arc(s.x*W,y,s.r,0,6.2832);g.fillStyle="#fff";g.fill()});g.globalAlpha=1;
+P.forEach(function(p){var o=orb(p),a=p.ph+p.dir*(t*o.sp+sy*.0007);p.d.style.transform="translate3d("+(o.cx+o.rx*Math.cos(a)-40)+"px,"+(o.cy+o.ry*Math.sin(a)-40)+"px,0)"});
+if(!rm)requestAnimationFrame(frame)}
+size();addEventListener("resize",function(){size();if(rm)frame(0)});
+if(rm){frame(0)}else{requestAnimationFrame(frame)}
+(function(){
+var sel=".hero h1,.hero .lead,.hero .cta,section h2,section .sub,.pipe,.panel,.stat,.job,.skills>div,.contact p,.contact .cta";
+var list=[].slice.call(document.querySelectorAll(sel));
+if(!document.documentElement.classList.contains("js")||!("IntersectionObserver" in window)){return}
+list.forEach(function(el){el.classList.add("rv");var sibs=[].slice.call(el.parentNode.children).filter(function(c){return c.classList.contains("rv")||list.indexOf(c)>-1});el.style.transitionDelay=Math.min(sibs.indexOf(el),5)*110+"ms"});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+list.forEach(function(el){io.observe(el)});
+})();
 </script>
 </body>
 </html>
